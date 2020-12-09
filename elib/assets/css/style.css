@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+html, body {
+	height: 100%;
+	width: 100%;
+	font-family: 'Poppins', sans-serif;
+}
+
+.top-navbar {
+	height:  2rem;
+	background-color: #800000!important;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.contacts {
+  margin-right: 2rem;
+  font-size: .8rem;
+  color: rgba(255, 255, 255, 0.918)!important;
+}
+
+.bottom-navbar {
+	padding: .8rem;
+  height: 5rem;
+  width: 100%;
+  margin: auto;
+}
+
+.nav-link {
+	margin-right: 2rem;
+	margin-left: 2rem;
+	color: #4f4f4f!important;
+}
+
+.nav-link:hover {
+	color: #8B0000!important;
+}
+
+.active{
+	background: #ECECEC;
+	color: #8B0000!important;
+}
+
+/*  carousel */
+.carousel-item {
+  height:100%;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.carousel-caption {
+  bottom: 270px;
+}
+
+.carousel-caption h5 {
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+
+.carousel-caption p {
+  width: 75%;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.9;
+}
+/* carousel end */
+
+.feature-container {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  background-color: #cfcfcf;
+  height: auto;
+  
+}
+
+.start-reading {
+  color: #8B0000;
+}
+
+
+.center {
+  margin: auto;
+}
+
+/* footer */
+footer {
+  background: #B22222;
+  background: -webkit-linear-gradient(59deg, #9b3c63, #800f0f);
+  background: linear-gradient(59deg, #7e0d0d, #550707);
+  color: white;
+  margin-top:100px;
+}
+
+footer a {
+  color: #fff;
+  font-size: 14px;
+  transition-duration: 0.2s;
+}
+
+footer a:hover {
+  color: #FA944B;
+  text-decoration: none;
+}
+
+.copy {
+  font-size: 12px;
+  padding: 10px;
+  border-top: 1px solid #FFFFFF;
+}
+
+.footer-middle {
+  padding-top: 2em;
+  color: white;
+}
+
+/* footer-social icons */
+ul.social-network {
+  list-style: none;
+  display: inline;
+  margin-left: 0 !important;
+  padding: 0;
+}
+
+ul.social-network li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.social-network a.icoFacebook:hover {
+  background-color: #3B5998;
+}
+
+.social-network a.icoGoogle:hover {
+  background-color: #007bb7;
+}
+
+.social-network a.icoTwitter:hover {
+  background-color: #007bb7;
+}
+
+.social-network a.icoTwitter:hover i,
+.social-network a.icoFacebook:hover i,
+.social-network a.icoGoogle:hover i {
+  color: #fff;
+}
+
+.social-network a.socialIcon:hover,
+.socialHoverClass {
+  color: #44BCDD;
+}
+
+.social-circle li a {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto 0 auto;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+}
+
+.social-circle li i {
+  margin: 0;
+  line-height: 30px;
+  text-align: center;
+}
+
+.social-circle li a:hover i,
+.triggeredHover {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms--transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.social-circle i {
+  color: #595959;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+.social-network a {
+  background-color: #F9F9F9;
+}
+
+/* end of footer-social icons */
+/* end of footer */
+
+
+
+/* 
+.navbar-light .navbar-brand {
+  color: #fff;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
+  color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-toggler {
+  background: #fff;
+}
+
+.navbar-nav {
+  text-align: center;
+}
+
+.nav-link {
+  padding: .2rem 1rem;
+}
+
+.nav-link.active,.nav-link:focus{
+  color: #fff;
+}
+
+.navbar-toggler {
+  padding: 1px 5px;
+  font-size: 18px;
+  line-height: 0.3;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+ */
+
+
+
+/*end of slider and navbar*/
+/*---Media Queries --*/
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
+  .contacts {
+    margin-right: 1rem;
+    font-size: .5rem;
+  }
+  .user {
+    font-size: .5rem;
+  }
+  .carousel-item {
+    height: 10vh;
+    width: 100%;
+  }
+
+}
+@media (max-width: 576px) {
+  .carousel-item {
+    height: 19rem;
+  }
+}
+
+
+
+/*---Firefox Bug Fix --*/
+.carousel-item {
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible; 
+}
+
+
+
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

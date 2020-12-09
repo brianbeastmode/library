@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- end of navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container bottom-navbar-container">
+      <a class="navbar-brand" href="/"><img src="{% static 'img/msu-banner.png' %}" height="40px"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Staff</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- end of navbar -->
+
+<div class="container search-form ">
+  <form class="form-inline" action="get" method="get">
+    <input class="form-control col-11" type="text" placeholder="Search for title, author, ISBN.."> 
+    <button type="submit" class="btn btn-primary ml-1">Search</button>
+  </form>
+</div>
+
+
+<div class="container book-list-container mt-5 ">
+  <div class="book-list">
+    <div class="book-box">
+      <table class="table">
+        <thead>
+          <tr>
+            <td class="item-cover"><img src="{%static 'img/book-cover.jpg' %}" alt=""></td>
+            <td>
+              <table>
+                <tbody>
+                  <tr>
+                    <td style="display: inline;">
+                      <h1>Title: Brian</h1>
+                      <h1>Author: imong mama asdasdas</h1>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="vertical-align: bottom;">
+                      <book-detail-container>
+                        <div id="book-year" class="book-details">
+                          asdasdas
+                        </div>
+                        <div id="book-category" class="book-details">
+                          asdasd22
+                        </div>
+                        <div id="book-ISBN" class="book-details">
+                          1234123
+                        </div>
+                      </book-detail-container>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <div class="book-box">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td>asdasda</td>
+            <td>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <h1>Title: Brian</h1>
+                      <h1>Author: imong mama</h1>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      asdasdas
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

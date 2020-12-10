@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'elib.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'library',
+        'NAME': 'elibrary',
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost'

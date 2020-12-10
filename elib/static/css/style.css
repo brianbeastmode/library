@@ -2,7 +2,7 @@
 
 html, body {
 	height: 100%;
-	width: 100%;
+  width: 100%;
 	font-family: 'Poppins', sans-serif;
 }
 
@@ -215,21 +215,61 @@ ul.social-network li {
 
 
 /* library css */
-.item-cover {
-  /* text-align: center; */
-  /* line-height: 20rem; */
-  width: 10rem;
-  height: 15rem;
+.book-list{
+  border: 1px solid #b4b4b4;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
+.book-box {
+  padding: 1rem;
+  border-bottom: 1px solid #b4b4b4;
+  
+}
+
+.table-main {
+  
+  
+}
+
+.details-container {
+  width: 90%;
+  padding-left: 1rem;
+  position:relative;
+
+}
+
+.book-caption-container {
+  position: absolute;
+  top:0;
+}
+
+.book-caption {
+}
+
+.book-details-container {
+  display: inline;
+  position: absolute;
+  bottom:0;
+  right:0;
+
+}
+
+.book-details {
+  display: inline;
+  vertical-align: bottom;
+}
+
+.item-cover {
+  width: 7rem;
+  height: 10rem;
+}
+
 .item-cover img{
   height: 100%;
   width: 100%;
   border-style: outset;
 }
 
-.book-list-container {
-  background-color: red;
-}
 /* end of library css */
 
 

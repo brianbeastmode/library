@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth import logout
+from .models import Books
+    
 
 def index(request):
 
@@ -9,10 +11,17 @@ def index(request):
         return render(request, "index.html")
 
 def library(request):
+    book = Books.objects.all()
+
     if not request.user.is_authenticated:
         return render(request, "login.html")
     else:
-        return render(request, "library.html")
+        return render(request, "library.html", {'books' : book})
+
+def book(request, id):
+    book = Books.objects.get(id=id)
+    return render(request, "book.html", {'book': book})
+
 
 def staff(request):
     if not request.user.is_authenticated:

@@ -38,124 +38,72 @@
 
 <div class="container book-list-container mt-5 ">
   <div class="book-list">
-    <div class="container book-box">
-      <table class="table-main">
-        <thead>
-          <tr>
-            <td class="item-cover ml-4"><img src="{%static 'img/book-cover.jpg' %}" alt=""></td>
-            <td class="details-container">
-              <table>
-                <tbody>
-                  <tr>
-                    <td class="book-caption-container">
-                      <a href="#"><h4 class="book-caption">Memory</h4></a>
-                      <h4 class="book-caption">Brian Muchuelas</h4>
-                      <h4 class="book-caption">Online Availability: Yes</h4> 
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="book-details-container">
-                        <div id="book-year" class="book-details">
-                          <div class="details-label">
-                            Year:
+    {% for book in books %}
+      <div class="container book-box">
+        <table class="table-main">
+          <thead>
+            <tr>
+              <td class="item-cover ml-4"><img src="{{book.bookImage.url}}" alt=""></td>
+              <td class="details-container">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td class="book-caption-container">
+                        <a href="/library/{{book.id}}"><h4 class="book-caption">{{book.bookTitle}}</h4></a>
+                        <h4 class="book-caption">{{book.bookAuthor}}</h4>
+                        <h4 class="book-caption">Online Availability: Yes</h4> 
+                      </td>
+                      
+                    </tr>
+                    <tr>
+                      <td class="book-details-container">
+                          <div id="book-year" class="book-details">
+                            <div class="details-label">
+                              Year:
+                            </div>
+                            <div class="details-value">
+                              {{book.yearPublished}}
+                            </div>
                           </div>
-                          <div class="details-value">
-                            2020
+                          <div id="book-category" class="book-details">
+                            <div class="details-label">
+                              Category: 
+                            </div>
+                            <div class="details-value">
+                              {{book.bookCategory}}
+                            </div>
                           </div>
-                        </div>
-                        <div id="book-category" class="book-details">
-                          <div class="details-label">
-                            Category: 
+                          <div id="book-ISBN" class="book-details">
+                            <div class="details-label">
+                              ISBN:
+                            </div>
+                            <div class="details-value">
+                              {{book.isbn}}
+                            </div>
                           </div>
-                          <div class="details-value">
-                            Science
+                          <div id="book-ISBN" class="book-details">
+                            <div class="details-label">
+                              Pages: 
+                            </div>
+                            <div class="details-value">
+                              {{book.pages}}
+                            </div>
                           </div>
-                        </div>
-                        <div id="book-ISBN" class="book-details">
-                          <div class="details-label">
-                            ISBN:
-                          </div>
-                          <div class="details-value">
-                            12344
-                          </div>
-                        </div>
-                        <div id="book-ISBN" class="book-details">
-                          <div class="details-label">
-                            Pages:
-                          </div>
-                          <div class="details-value">
-                            69
-                          </div>
-                        </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </thead>
-      </table>
-    </div>
-    <div class="book-box">
-      <table class="table-main">
-        <thead>
-          <tr>
-            <td class="item-cover ml-4"><img src="{%static 'img/book-cover.jpg' %}" alt=""></td>
-            <td class="details-container">
-              <table>
-                <tbody>
-                  <tr>
-                    <td class="book-caption-container">
-                      <h4 class="book-caption">Memory</h4>
-                      <h4 class="book-caption">Author: Brian Muchuelas</h4>
-                      <h4 class="book-caption">Online Availability: Yes</h4>             
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="book-details-container">
-                        <div id="book-year" class="book-details">
-                          <div class="details-label">
-                            Year:
-                          </div>
-                          <div class="details-value">
-                            2020
-                          </div>
-                        </div>
-                        <div id="book-category" class="book-details">
-                          <div class="details-label">
-                            Category: 
-                          </div>
-                          <div class="details-value">
-                            Science
-                          </div>
-                        </div>
-                        <div id="book-ISBN" class="book-details">
-                          <div class="details-label">
-                            ISBN:
-                          </div>
-                          <div class="details-value">
-                            12344
-                          </div>
-                        </div>
-                        <div id="book-ISBN" class="book-details">
-                          <div class="details-label">
-                            Pages:
-                          </div>
-                          <div class="details-value">
-                            69
-                          </div>
-                        </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </thead>
-      </table>
-    </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    {% endfor %}
+
   </div>
 </div>
+
+
 
     
 {% endblock %}

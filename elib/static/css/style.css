@@ -143,7 +143,7 @@ ul.social-network li {
 }
 
 .social-network a.icoGoogle:hover {
-  background-color: #007bb7;
+  background-color: #b30b0b;
 }
 
 .social-network a.icoTwitter:hover {
@@ -206,6 +206,13 @@ ul.social-network li {
   background-color: #F9F9F9;
 }
 
+.footer-two h2{
+  margin-bottom: 1rem;
+}
+
+.footer-two :nth-child(1){
+  margin-bottom: .5rem;
+}
 /* end of footer-social icons */
 /* end of footer */
 
@@ -292,6 +299,77 @@ ul.social-network li {
 /* end of library css */
 
 
+/* book preview css */
+
+.preview-container {
+  width: 55%;
+  margin: auto;
+  margin-top: 5rem;
+}
+
+.nav-title {
+  margin-left: 0;
+  margin-bottom: 1rem;
+}
+
+.nav-title a{
+  text-decoration: underline;
+  color: #4f4f4f;
+  font-size: 1rem;
+  padding-right: 1rem;
+  
+}
+
+.nav-title a:hover{
+  color: #B22222;
+  
+}
+.nav-title h1{
+  font-size: 1rem;
+  color: #4f4f4f;
+  padding-left: 1rem;
+  line-height: 1.5;
+}
+
+.book-description-cover img{
+  width: 20rem;
+  height: 27rem;
+  border: solid gray 2px;
+  
+}
+
+#book-description-author {
+  font-size: large;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+#book-description-summary {
+  line-height: 1.6;
+}
+
+#book-description-summary #collapseExample.collapse:not(.show) {
+  display: block;
+  height: 17rem;
+  overflow: hidden;
+}
+
+#book-description-summary #collapseExample.collapsing {
+  height: 17rem;
+}
+
+#book-description-summary a.collapsed:after {
+  content: '+ Show More';
+  color:#B22222;
+}
+
+#book-description-summary a:not(.collapsed):after {
+  content: '- Show Less';
+  color:#B22222;
+}
+
+/* end of book preview css */
+
 
 
 /*---Media Queries --*/
@@ -349,7 +427,6 @@ Large (lg) devices (desktops, 992px and up)
 Extra (xl) large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { ... }
 */
-
 
 
 

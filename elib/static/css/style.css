@@ -58,7 +58,9 @@ html, body {
   background-size: cover;
 }
 .carousel-caption {
-  bottom: 270px;
+  position: absolute;
+
+
 }
 
 .carousel-caption h5 {
@@ -247,16 +249,17 @@ ul.social-network li {
 }
 
 .book-caption-container a:hover{
-  color: #B22222;
+  color: #B22222!important;
 }
 
 .book-caption:nth-child(2){
   font-style: italic;
-  color: #B22222;
+  color: #B22222!important;
   
 }
 .book-caption {
   font-size: 20px;
+  color: ;
 }
 
 .book-details-container {
@@ -338,10 +341,19 @@ ul.social-network li {
   
 }
 
+.preview-book-description a{
+  color: #B22222;
+}
+
 #book-description-author {
-  font-size: large;
+  font-size: x-large;
   font-style: italic;
   margin-bottom: 1.5rem;
+  color: #B22222;
+}
+
+#book-description-author:hover{
+  color: #000011;
 }
 
 #book-description-summary {
@@ -361,6 +373,7 @@ ul.social-network li {
 #book-description-summary a.collapsed:after {
   content: '+ Show More';
   color:#B22222;
+  text-decoration-line: none;
 }
 
 #book-description-summary a:not(.collapsed):after {
@@ -368,6 +381,40 @@ ul.social-network li {
   color:#B22222;
 }
 
+.book-property-container{
+  column-count: 2;
+}
+
+.book-property-container h5{
+  font-size: 1rem;
+}
+
+.book-property-label {
+  display: inline-flex;
+  color: #4f4f4f;
+}
+
+.book-property-value {
+  display: inline-flex;
+  color: #4f4f4f;
+}
+
+.function-container {
+  margin-top: 1rem;
+}
+
+.read-button {
+  background-color: #8B0000;
+  border: none;
+}
+
+.read-button:hover{
+  background-color: #8B0000;
+}
+
+.read-button img{
+  height: 2rem;
+}
 /* end of book preview css */
 
 

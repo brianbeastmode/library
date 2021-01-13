@@ -47,6 +47,7 @@ html, body {
 	color: #8B0000!important;
 }
 
+/* start of index css */
 /*  carousel */
 .carousel-item {
   height:90vh;
@@ -78,15 +79,7 @@ html, body {
 }
 /* carousel end */
 
-.feature-container {
-  width: 100%;
-  margin: auto;
-  text-align: center;
-  background-color: #cfcfcf;
-  height: auto;
-  
-}
-
+/* start of feature css */
 .start-reading {
   color: #8B0000;
 }
@@ -96,13 +89,127 @@ html, body {
   margin: auto;
 }
 
+#book-feature {
+  background: #4f4f4f!important;
+}
+
+
+/* .btn-primary {
+  color: #fff;
+  background-color: #007b5e;
+  border-color: #007b5e;
+} */
+
+/* #team .card {
+  border: none;
+} */
+
+.feature-card{
+  padding:0;
+}
+
+.card-body{
+  padding: 0rem;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.mainflip {
+  -webkit-transition: 1s;
+  -webkit-transform-style: preserve-3d;
+  -ms-transition: 1s;
+  -moz-transition: 1s;
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transition: 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.frontside {
+  position: relative;
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.backside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+.frontside,
+.backside {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transition: 1s;
+  -moz-transform-style: preserve-3d;
+  -o-transition: 1s;
+  -o-transform-style: preserve-3d;
+  -ms-transition: 1s;
+  -ms-transform-style: preserve-3d;
+  transition: 1s;
+  transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+  min-height: 15rem;
+  min-width: 12rem;
+}
+
+.backside .card a {
+  font-size: 1rem;
+  color: #007b5e !important;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+  color: #8B0000 !important;
+}
+
+.frontside .card .card-body img {
+  width: 12rem;
+  height: 15rem;
+
+}
+
+
+/* end of feature css */
+
 /* footer */
 footer {
   background: #B22222;
   background: -webkit-linear-gradient(59deg, #9b3c63, #800f0f);
   background: linear-gradient(59deg, #7e0d0d, #550707);
   color: white;
-  margin-top:100px;
 }
 
 footer a {
@@ -220,6 +327,7 @@ ul.social-network li {
 
 
 
+
 /* library css */
 .book-list{
   border: 1px solid #b4b4b4;
@@ -259,7 +367,6 @@ ul.social-network li {
 }
 .book-caption {
   font-size: 20px;
-  color: ;
 }
 
 .book-details-container {
@@ -418,6 +525,20 @@ ul.social-network li {
 /* end of book preview css */
 
 
+/* start of staff css */
+
+#container-staff-carousel {
+
+}
+#carousel-inner-staff {
+  height: 20rem;
+  width: 60%;
+  margin: auto;
+  background-color: black!important;
+
+}
+/* end of staff css */
+
 
 /*---Media Queries --*/
 @media (max-width: 992px) {
@@ -425,23 +546,11 @@ ul.social-network li {
 }
 
 @media (max-width: 768px) {
-  .contacts {
-    margin-right: 1rem;
-    font-size: .5rem;
-  }
-  .user {
-    font-size: .5rem;
-  }
-  .carousel-item {
-    height: 10vh;
-    width: 100%;
-  }
+  
 
 }
 @media (max-width: 576px) {
-  .carousel-item {
-    height: 19rem;
-  }
+
 }
 
 
@@ -455,9 +564,12 @@ ul.social-network li {
   backface-visibility: visible; 
 }
 
-
-
-
+.card-columns {
+  column-gap: 0;
+}
+.card {
+  margin-bottom:0!important;
+}
 /*
 Extra small (xs) devices (portrait phones, less than 576px)
 No media query since this is the default in Bootstrap
@@ -491,7 +603,13 @@ Extra (xl) large devices (large desktops, 1200px and up)
 
 
 
-
+.frontside:hover {
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
 
 
 

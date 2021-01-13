@@ -29,7 +29,7 @@
       <div class="user-container justify-content-end">
         <span class="user"> Current user: {{user.get_full_name}}</span>
         <a class="user" href="{% url 'account_logout' %}">Logout</a>
-      </div>
+    </div>
   </nav>
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container bottom-navbar-container">
@@ -101,103 +101,85 @@
 
   <!-- End of Slider Carousel -->
 
-  <!-- Start of Featured -->
-  <!-- <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">asdasd</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <div id="indexSearchBar" class = "container">
+    What are you looking for at the library?
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-      </ul>
-    </div>
+    <form action="/library" method="GET">
+      <div class="form-row">
+          <div class="form-group col-12">
+              <div class="input-group">
+                  <input class="form-control py-2 border-right-0 border" type="search" name="all_query" placeholder="Title or author" />
+                  <span class="input-group-append">
+                      <div class="input-group-text bg-transparent">
+                          <button type="submit">Submit</button>
+                      </div>
+                  </span>
+              </div>
+          </div>        
+      </div>
   </div>
-</nav>
 
 
 
-    <!-- Start of Search Bar -->
-  <!-- <section class="container-fluid feature-container">
-    <div class="start-reading pt-5 pb-1">
-      <h1 class="display-1">Start reading now</h1>
+    <!-- start of the Featured -->
+
+
+  <section id="book-feature">
+    <div class="container">
+      <h1 class="display-3 pt-5">Featured Books</h1>
+      <div class="row">
+              {% for book in books %}
+              <div class="feature-card col-xs-6 col-sm-6 col-xl-2 ">
+                  <div class="image-flip" >
+                      <div class="mainflip flip-0">
+                          <div class="frontside">
+                              <div class="card">
+                                  <div class="card-body text-center">
+                                      <img class="img-fluid" src="{{book.bookImage.url}}" alt="card image">     
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="backside">
+                              <div class="card">
+                                  <div class="card-body text-center">
+                                      <h4 class="card-title">{{book.bookTitle}}</h4>
+                                      <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                      <ul class="list-inline">
+                                          <li class="list-inline-item">
+                                              <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                  <i class="fa fa-facebook"></i>
+                                              </a>
+                                          </li>
+                                          <li class="list-inline-item">
+                                              <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                  <i class="fa fa-twitter"></i>
+                                              </a>
+                                          </li>
+                                          <li class="list-inline-item">
+                                              <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                  <i class="fa fa-skype"></i>
+                                              </a>
+                                          </li>
+                                          <li class="list-inline-item">
+                                              <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                  <i class="fa fa-google"></i>
+                                              </a>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              {% endfor %}
+      </div>
     </div>
-    
-    <form class="">
-      <input class="form-control col-lg-6 col-sm-9 center m-auto" type="text" placeholder="Search for title, author, ISBN ...">
-      <button type="submit" class="btn btn-primary mt-2">Search</button>
-    </form> -->
-    <!--  End of Search Bar -->
-
-
-    <h1 class="display-3 mt-5">Featured Books</h1>
-    <span>__________________________________</span>
-
-
-    <div class="card-columns p-5">
-      <div class="card">
-        <a href="#"><img class="card-img-top" src="./img/book-cover1.jpg" alt="Card image cap data-toggle="tooltip" data-placement="right" title="Title""></a>
-        <div class="card-body text-left">
-          <h5 class="card-title">Title: Hello</h5>
-          <h6 class="card-title">Author: Natoy</h6>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div> 
-      </div>
-      <div class="card">
-        <a href="#"><img class="card-img-top" src="./img/book-cover1.jpg" alt="Card image cap data-toggle="tooltip" data-placement="right" title="Title""></a>
-        <div class="card-body text-left">
-          <h5 class="card-title">Title: Hello</h5>
-          <h6 class="card-title">Author: Natoy</h6>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div> 
-      </div>
-      <div class="card">
-        <a href="#"><img class="card-img-top" src="./img/book-cover1.jpg" alt="Card image cap data-toggle="tooltip" data-placement="right" title="Title""></a>
-        <div class="card-body text-left">
-          <h5 class="card-title">Title: Hello</h5>
-          <h6 class="card-title">Author: Natoy</h6>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div> 
-      </div>
-      <div class="card">
-        <a href="#"><img class="card-img-top" src="./img/book-cover1.jpg" alt="Card image cap data-toggle="tooltip" data-placement="right" title="Title""></a>
-        <div class="card-body text-left">
-          <h5 class="card-title">Title: Hello</h5>
-          <h6 class="card-title">Author: Natoy</h6>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div> 
-      </div>
-      <div class="card">
-        <a href="#"><img class="card-img-top" src="./img/book-cover1.jpg" alt="Card image cap data-toggle="tooltip" data-placement="right" title="Title""></a>
-        <div class="card-body text-left">
-          <h5 class="card-title">Title: Hello</h5>
-          <h6 class="card-title">Author: Natoy</h6>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div> 
-      </div>
-      <div class="card">
-        <a href="#"><img class="card-img-top" src="./img/book-cover1.jpg" alt="Card image cap data-toggle="tooltip" data-placement="right" title="Title""></a>
-        <div class="card-body text-left">
-          <h5 class="card-title">Title: Hello</h5>
-          <h6 class="card-title">Author: Natoy</h6>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div> 
-      </div>
-      
-      
-      
-    </div>
- 
   </section>
+          
+
+
+  
 
 
   <!-- End of Featured -->

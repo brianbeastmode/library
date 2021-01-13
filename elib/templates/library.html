@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load extras %}
 
 {% block content %}
 <!-- start of navbar -->
@@ -100,7 +101,9 @@
       </div>
     </div>
     
-    <button type="submit" class="btn btn-primary">Search</button>
+    <button type="submit" class="btn btn-primary mr-2">Search</button>
+    <a href="/library" class="btn btn-primary">Clear Searches</a>
+    
   </form>
 
   <hr />
@@ -109,7 +112,8 @@
 
 <div class="container book-list-container mt-5 ">
   <div class="book-list">
-    {% for book in queryset %}
+    
+    {% for book in paginated %}
       <div class="container book-box">
         <table class="table-main">
           <thead>
@@ -182,10 +186,34 @@
 </div>
 
 
-</div//>
+<!-- Pagination -->
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
 
 
-<!-- end of search filter -->
+
+    {% if paginated.has_previous %}
+    <a class="btn btn-outline-info" href="{% my_url 1 'page' request.GET.urlencode %}"><<</a>
+
+    {% endif %}
+
+    {% for num in paginated.paginator.page_range %}
+      {% if paginated.number == num%}
+      <a class="btn btn-info" href="{% my_url num 'page' request.GET.urlencode %}">{{num}}</a>
+      {% elif num > paginated.number|add:'-3' and num < paginated.number|add:'3'%}
+      <a class="btn btn-outline-info" href="{% my_url num 'page' request.GET.urlencode %}">{{num}}</a>
+      {% endif%}
+
+    {% endfor %}
+
+    {% if paginated.has_next %}
+
+    <a class="btn btn-outline-info"  href="{% my_url paginated.paginator.num_pages 'page' request.GET.urlencode %}">>></a>
+    {% endif %}
+
+
+  </ul>
+</nav>
 
 
     

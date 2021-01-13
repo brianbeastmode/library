@@ -4,6 +4,10 @@ from django.db.models import Q
 from .models import Books
 from .filters import BookFilter
 
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.views.decorators.clickjacking import xframe_options_exempt
+@xframe_options_exempt
+
 
 # from django.template.loader import get_template
 # from xhtml2pdf import pisa
@@ -16,16 +20,24 @@ def is_query_valid(param):
 
 
 def index(request):
+    qs = Books.objects.all()
 
     if request.user.is_authenticated:
-        return render(request, "index.html")
+        qs = qs.filter(featured=True)
+        
+        context = {
+            'books': qs
+        }
+        return render(request, "index2.html", context)
     else:
         return render(request, "login.html")
 
 
 def library(request): #filter and display books
-    qs = Books.objects.all()
+    qs = Books.objects.all().order_by('bookTitle')
+    context = {}
     if request.user.is_authenticated:
+        all_query = request.GET.get('all_query')
         title_author_query = request.GET.get('title_author')
         category_query = request.GET.get('category')
         isbn_query = request.GET.get('isbn')
@@ -35,7 +47,10 @@ def library(request): #filter and display books
         file_unavailable_query = request.GET.get('file_unavailable')
         
         
-        
+        if is_query_valid(all_query):
+            qs = qs.filter(Q(bookTitle__icontains=all_query) | Q(bookAuthor__icontains=all_query)
+            | Q(bookCategory__icontains=all_query) | Q(isbn__iexact=all_query) | Q(yearPublished__iexact=all_query)).distinct()
+            
         if is_query_valid(title_author_query):
             qs = qs.filter(Q(bookTitle__icontains=title_author_query) | Q(bookAuthor__icontains=title_author_query)).distinct()
 
@@ -57,10 +72,19 @@ def library(request): #filter and display books
         if file_unavailable_query =='on':
             qs = qs.filter(bookFile='')
 
+        context['books'] = qs
 
-        context = {
-            'queryset': qs
-        }
+        paginator = Paginator(qs, 10)
+        page = request.GET.get('page', 1)
+
+        try:
+            response = paginator.page(page)
+        except PageNotAnInteger:
+            response = paginator.page(1)
+        except EmptyPage:
+            response = paginator.page(paginator.num_pages)
+
+        context['paginated'] = response
 
         return render(request, "library.html", context)
     else:
@@ -115,6 +139,22 @@ def userManual(request, id, bookTitle):
         return render(request, "book-view.html", {'bookTitle': book.bookTitle, 'bookFile': book.bookFile})
     else:
         return render(request, "login.html")
+
+
+def first(request):
+	
+	book = Books.objects.all()
+	return render(request, 'home.html', {'books':book})
+
+def second_pdfjs(request):
+    
+    book = Books.objects.all()
+    qs = book.filter(bookFile__istartswith='books')
+    return render(request, 'pdfjs.html', {'books':qs})
+
+def pdf_view(request):
+    return render(request, 'viewer.html')
+
 # def userManual(request, id, title):
 #     book = Books.objects.get(id=id, bookTitle=title)
 #     file_location = './media/books/Queueing.v3.pdf'
